@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Épreuve 1 - L'Œil du Styliste</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/jpeg" href="favicon.jpeg">
+  
+  <audio id="bg-music" loop>
+    <source src="enigme_ost.mp3" type="audio/mpeg">
+  </audio>
+</head>
+<body>
+
+  <div class="page-loader" id="page-loader">
+    <div class="loader-content">
+      <div class="loader-logo">
+        <div class="loader-symbols">
+          <span class="loader-symbol circle"></span>
+          <span class="loader-symbol triangle"></span>
+          <span class="loader-symbol square"></span>
+        </div>
+      </div>
+      <div class="loader-text">ÉPREUVE 1 — L'ŒIL DU STYLISTE</div>
+      <div class="loader-bar">
+        <div class="loader-progress"></div>
+      </div>
+      <div class="loader-status">Ouverture de l'atelier...</div>
+    </div>
+  </div>
+
+  <header class="header">
+    <a href="#" class="back-btn" id="back-btn">← Retour</a>
+    <div class="header-center">
+      <span class="page-badge">ÉPREUVE 1</span>
+    </div>
+    <div class="header-right"></div>
+  </header>
+
+  <main class="game-page">
+    <div class="game-container game-container-wide">
+      <div class="game-header">
+        <div class="game-icon-large">👁️</div>
+        <h1 class="purple">L'ŒIL DU STYLISTE</h1>
+        <p>Identifie les pièces mode cachées pour débloquer l'accès à l'atelier, darling</p>
+      </div>
+
+      <div class="game-content">
+        <div class="game-layout-split" id="enigme1-layout" style="display: grid;">
+          <div class="game-col-left">
+            <div class="mission-briefing-box scenario-theme height-match">
+              <div class="briefing-box-header">
+                <span class="briefing-box-icon">👁️</span>
+                <h3>ORDRE DE MISSION</h3>
+                <span class="briefing-box-tag">ÉPREUVE 1</span>
+              </div>
+              
+              <div class="briefing-box-content">
+                <div class="mission-context">
+                  <h4>👗 LA SITUATION</h4>
+                  <p>
+                    Avant de toucher à la collection, la rédactrice en chef veut savoir si t'as les <strong>bases</strong>, darling. 
+                    Elle a planqué <strong>3 devinettes</strong> dans l'atelier. Trouve les bonnes réponses 
+                    pour prouver que tu mérites de toucher aux tissus.
+                  </p>
+                </div>
+
+                <div class="mission-objective">
+                  <h4>🧩 LES 3 DEVINETTES DE LA RÉDACTRICE</h4>
+                  <div style="background: rgba(0,0,0,0.2); padding: 0.8rem; border-radius: 8px; margin-bottom: 0.8rem;">
+                    <strong>DEVINETTE 1</strong><br>
+                    <em>"Je suis un outil de base dans tout atelier de couture.<br>
+                    Je coupe les tissus avec précision.<br>
+                    Sans moi, darling, aucune création ne voit le jour.<br>
+                    Qui suis-je ?"</em><br>
+                  </div>
+                  <div style="background: rgba(0,0,0,0.2); padding: 0.8rem; border-radius: 8px; margin-bottom: 0.8rem;">
+                    <strong>DEVINETTE 2</strong><br>
+                    <em>"Je suis le support sur lequel on drape les tissus.<br>
+                    J'ai la forme d'un corps humain sans tête ni bras.<br>
+                    Les stylistes ne peuvent pas créer sans moi.<br>
+                    Qui suis-je ?"</em><br>
+                  </div>
+                  <div style="background: rgba(0,0,0,0.2); padding: 0.8rem; border-radius: 8px;">
+                    <strong>DEVINETTE 3</strong><br>
+                    <em>"Je suis un long chemin étroit et éclairé.<br>
+                    Les mannequins marchent sur moi devant le public.<br>
+                    C'est sur moi que les créations sont révélées au monde.<br>
+                    Qui suis-je ?"</em><br>
+                  </div>
+                </div>
+
+                <div class="mission-rules">
+                  <h4>📜 RÈGLES DE L'ATELIER</h4>
+                  <ul>
+                    <li><span class="rule-icon">⏱️</span> Trouve les réponses avant la fin du chrono</li>
+                    <li><span class="rule-icon">🤝</span> Bosse avec ton équipe</li>
+                    <li><span class="rule-icon">🚫</span> Quitter la page = Game Over direct</li>
+                    <li><span class="rule-icon">💡</span> Un indice dispo auprès du maître du jeu</li>
+                  </ul>
+                </div>
+
+                <div class="mission-reward">
+                  <h4>👑 LOOK À DÉBLOQUER</h4>
+                  <div class="reward-preview">
+                    <span class="reward-icon-box">👁️</span>
+                    <div class="reward-details">
+                      <strong>Look mystère</strong>
+                      <span>À découvrir dans le dressing final</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="game-col-right">
+            <div class="game-content-inner height-match">
+              <div class="timer-section-centered">
+                <div class="warning-box" id="warning-box">
+                  <span class="warning-icon">⚠️</span>
+                  <p>Une fois le chrono lancé, si tu quittes la page, c'est game over automatique, darling !</p>
+                </div>
+
+                <div class="timer-container">
+                  <div class="timer-display">
+                    <span class="timer-num" id="timer-min">05</span>
+                    <span class="timer-sep">:</span>
+                    <span class="timer-num" id="timer-sec">00</span>
+                  </div>
+                  <span class="timer-label">TEMPS RESTANT</span>
+                </div>
+
+                <button class="btn-primary" id="btn-start">LANCER LE CHRONO</button>
+
+                <div class="validation-container hidden" id="validation">
+                  <div class="validation-box">
+                    <h3>⏱️ Temps écoulé !</h3>
+                    <p>T'as trouvé les 3 réponses, darling ?</p>
+                    <div class="validation-btns">
+                      <button class="btn-success" id="btn-yes">OUI, C'EST BON</button>
+                      <button class="btn-fail" id="btn-no">NON, J'AI PAS TROUVÉ</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="result-container-full hidden" id="result">
+          <div class="result-box" id="result-box">
+            <div class="result-icon" id="result-icon"></div>
+            <h3 id="result-title"></h3>
+            <p id="result-text"></p>
+            <a href="quiz.html" class="btn-primary">CONTINUER →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="loader.js"></script>
+  <script src="gameState.js"></script>
+  <script src="enigme1.js"></script>
+  <script src="music.js"></script>
+</body>
+</html>

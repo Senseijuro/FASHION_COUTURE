@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Destination Apprentissage - Accueil</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/jpeg" href="favicon.jpeg">
+  
+  <!-- Musique de fond -->
+  <audio id="bg-music" loop>
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
+</head>
+<body>
+
+  <!-- LOADER -->
+  <div class="page-loader" id="page-loader">
+    <div class="loader-content">
+      <div class="loader-logo">
+        <div class="loader-symbols">
+          <span class="loader-symbol circle"></span>
+          <span class="loader-symbol triangle"></span>
+          <span class="loader-symbol square"></span>
+        </div>
+      </div>
+      <div class="loader-text">DESTINATION APPRENTISSAGE</div>
+      <div class="loader-bar">
+        <div class="loader-progress"></div>
+      </div>
+      <div class="loader-status">Chargement de la collection...</div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-left">
+      <div class="squid-symbols">
+        <span class="symbol circle"></span>
+        <span class="symbol triangle"></span>
+        <span class="symbol square"></span>
+      </div>
+      <span class="logo-text">Destination Apprentissage</span>
+    </div>
+    <div class="header-right">
+      <a href="https://www.onisep.fr/ressources/univers-metier/metiers/styliste" target="_blank" class="btn-formation">
+        <span class="btn-formation-text">Découvrir les formations</span>
+      </a>
+    </div>
+  </header>
+
+  <main class="main-container">
+    <!-- Hero -->
+    <section class="hero">
+      <img src="affiche_boost.jpeg" alt="Destination Apprentissage" class="hero-affiche">
+      <p class="hero-subtitle">Mardi 31 Mars 2026 — Lycée Jules Uhry Creil</p>
+    </section>
+
+    <section class="mission-section">
+      <div class="mission-hero">
+        <div class="mission-hero-bg">
+          <img src="prada.jpg" alt="Le Diable s'habille en Prada" class="mission-hero-img">
+          <div class="mission-hero-overlay"></div>
+        </div>
+        <div class="mission-hero-content">
+          <span class="mission-tag">SOUS-THÈME OFFICIEL</span>
+          <h2 class="mission-main-title">FASHION<br><span>COUTURE</span></h2>
+          <p class="mission-tagline">"Darling, la mode n'attend pas. La vraie question, c'est : est-ce que TOI, t'as le style ?"</p>
+          <div class="mission-divider">
+            <span class="divider-line"></span>
+            <span class="divider-icon">◆</span>
+            <span class="divider-line"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Règles -->
+    <section class="rules-section">
+      <div class="card">
+        <h2>📋 RÈGLES DU DÉFILÉ</h2>
+        <ul class="rules-list">
+          <li>Découvrez d'abord le <strong>scénario</strong> pour comprendre votre mission</li>
+          <li>Complétez les 3 épreuves dans l'ordre pour débloquer vos récompenses</li>
+          <li>Chaque épreuve réussie débloque une récompense dans le dressing</li>
+          <li>Les timers ne peuvent être lancés qu'une seule fois</li>
+          <li><strong class="warning">⚠️ Si vous quittez pendant un timer, l'épreuve est automatiquement échouée !</strong></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Section Briefing + Slider côte à côte -->
+    <section class="main-game-section">
+      <div class="main-game-layout">
+        <!-- COLONNE GAUCHE : BRIEFING -->
+        <div class="main-col-left">
+          <div class="briefing-card-index">
+            <div class="briefing-header">
+              <div class="briefing-icon">
+                <span class="icon-ring"></span>
+                <span class="icon-center">👗</span>
+              </div>
+              <div class="briefing-title">
+                <span class="briefing-label">CARNET DE LA RÉDACTRICE</span>
+                <h3>DOSSIER FASHION WEEK</h3>
+              </div>
+              <div class="briefing-stamp">PRADA EDITION</div>
+            </div>
+            
+            <div class="briefing-body">
+              <p class="briefing-intro">
+                <strong>Darling,</strong> t'as été sélectionné pour intégrer la plus prestigieuse maison de mode au <span class="highlight">Lycée Jules Uhry</span>. La rédactrice en chef a besoin de nouveaux talents. C'est TOI qui vas sauver la collection !
+              </p>
+              
+              <div class="briefing-objectives">
+                <h4>🎯 ÉTAPES DU PROJET</h4>
+                <ul>
+                  <li><span class="obj-number">01</span> Découvre le scénario et comprends le défi mode</li>
+                  <li><span class="obj-number">02</span> Réussis les épreuves fashion chronométrées</li>
+                  <li><span class="obj-number">03</span> Débloque tes looks dans le dressing final</li>
+                </ul>
+              </div>
+
+              <div class="briefing-warning">
+                <span class="warning-icon">⚠️</span>
+                <p>Le chrono tourne, darling. Si tu quittes l'atelier pendant un défi, c'est <strong>GAME OVER</strong> pour cette épreuve !</p>
+              </div>
+            </div>
+
+            <div class="briefing-stats">
+              <div class="stat-card">
+                <span class="stat-icon">📖</span>
+                <span class="stat-number">1</span>
+                <span class="stat-text">HISTOIRE</span>
+              </div>
+              <div class="stat-card">
+                <span class="stat-icon">✂️</span>
+                <span class="stat-number">3</span>
+                <span class="stat-text">DÉFIS</span>
+              </div>
+              <div class="stat-card">
+                <span class="stat-icon">👑</span>
+                <span class="stat-number">2</span>
+                <span class="stat-text">LOOKS</span>
+              </div>
+            </div>
+
+            <div class="briefing-footer">
+              <p>T'as le style ? Alors prouve-le. Le défilé attend personne.</p>
+              <span class="footer-signature">— La Rédaction, Prada Edition</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="main-col-right">
+          <div class="slider-section-inline">
+            <h2 class="section-title">PARCOURS DES ÉPREUVES</h2>
+            
+            <div class="slider-container">
+              <button class="slider-btn prev" id="btn-prev">‹</button>
+              
+              <div class="slider-viewport">
+                <div class="slider-track" id="slider-track">
+                  <!-- Scénario (page explicative) -->
+                  <div class="slide" data-index="0">
+                    <div class="slide-card scenario-card" id="card-scenario">
+                      <div class="slide-badge">CONTEXTE</div>
+                      <div class="slide-icon">📖</div>
+                      <h3 class="purple">SCÉNARIO</h3>
+                      <p>Découvrez l'histoire</p>
+                      <div class="slide-status" id="status-scenario">
+                        <span class="status-dot"></span>
+                        <span>À découvrir</span>
+                      </div>
+                      <a href="scenario.html" class="slide-btn" id="btn-scenario">DÉCOUVRIR</a>
+                    </div>
+                  </div>
+
+                  <!-- Épreuve 1 : ÉNIGME 1 -->
+                  <div class="slide" data-index="1">
+                    <div class="slide-card" id="card-enigme1">
+                      <div class="slide-badge">ÉPREUVE 1</div>
+                      <div class="slide-icon">👁️</div>
+                      <h3 class="purple">L'ŒIL DU STYLISTE</h3>
+                      <p>Identifiez les pièces mode</p>
+                      <div class="slide-status" id="status-enigme1">
+                        <span class="status-dot"></span>
+                        <span>À faire</span>
+                      </div>
+                      <a href="enigme1.html" class="slide-btn" id="btn-enigme1">COMMENCER</a>
+                    </div>
+                  </div>
+
+                  <!-- Épreuve 2 : QUIZ -->
+                  <div class="slide" data-index="2">
+                    <div class="slide-card locked" id="card-quiz">
+                      <div class="slide-badge">ÉPREUVE 2</div>
+                      <div class="slide-icon">💎</div>
+                      <h3 class="cyan">QUIZ FASHION</h3>
+                      <p>Test de culture mode</p>
+                      <div class="slide-status" id="status-quiz">
+                        <span class="status-dot"></span>
+                        <span>🔒 Verrouillé</span>
+                      </div>
+                      <a href="quiz.html" class="slide-btn disabled" id="btn-quiz">VERROUILLÉ</a>
+                    </div>
+                  </div>
+
+                  <!-- Épreuve 3 : ÉNIGME FINALE -->
+                  <div class="slide" data-index="3">
+                    <div class="slide-card locked" id="card-enigma">
+                      <div class="slide-badge">ÉPREUVE 3</div>
+                      <div class="slide-icon">👑</div>
+                      <h3 class="pink">LE DÉFILÉ FINAL</h3>
+                      <p>Énigme haute couture</p>
+                      <div class="slide-status" id="status-enigma">
+                        <span class="status-dot"></span>
+                        <span>🔒 Verrouillé</span>
+                      </div>
+                      <a href="enigme.html" class="slide-btn disabled" id="btn-enigma">VERROUILLÉ</a>
+                    </div>
+                  </div>
+
+                  <!-- Coffre -->
+                  <div class="slide" data-index="4">
+                    <div class="slide-card coffre" id="card-coffre">
+                      <div class="slide-badge gold">FINAL</div>
+                      <div class="slide-icon">👑</div>
+                      <h3 class="gold">DRESSING</h3>
+                      <p>Récupérez vos récompenses</p>
+                      <div class="slide-status" id="status-coffre">
+                        <span class="status-dot"></span>
+                        <span>0/3 débloqué</span>
+                      </div>
+                      <a href="coffre.html" class="slide-btn gold">OUVRIR</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <button class="slider-btn next" id="btn-next">›</button>
+            </div>
+
+            <!-- Dots navigation -->
+            <div class="slider-dots" id="slider-dots">
+              <span class="dot active" data-index="0"></span>
+              <span class="dot" data-index="1"></span>
+              <span class="dot" data-index="2"></span>
+              <span class="dot" data-index="3"></span>
+              <span class="dot" data-index="4"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer-enhanced">
+    <div class="footer-content">
+      <div class="footer-partners">
+        <span class="partners-label">En partenariat avec</span>
+        <div class="partners-logos">
+          <img src="logo-creil.png" alt="Ville de Creil" class="partner-logo">
+          <img src="logo-e2c.jpg" alt="E2C Ouest Som'Oise" class="partner-logo">
+        </div>
+      </div>
+
+      <div class="footer-main">
+        <div class="footer-info">
+          <div class="footer-logo">
+            <div class="squid-symbols">
+              <span class="symbol circle"></span>
+              <span class="symbol triangle"></span>
+              <span class="symbol square"></span>
+            </div>
+            <span class="footer-title">Destination Apprentissage</span>
+          </div>
+          <p class="footer-date">📅 Mardi 31 Mars 2026</p>
+          <p class="footer-location">📍 Lycée Jules Uhry, Creil</p>
+          <a href="equipe.html" class="btn-equipe">👥 Découvrir l'équipe</a>
+        </div>
+        
+        <div class="footer-qr">
+          <div class="qr-box">
+            <div class="qr-placeholder" id="qr-code">
+              <img src="qrcode.png" alt="QR Code - Accéder au jeu" class="qr-img">
+            </div>
+            <p class="qr-label">Scannez pour accéder aux questions</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>© 2026 Maître du Jeu Khouyousse — Destination Apprentissage</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="loader.js"></script>
+  <script src="gameState.js"></script>
+  <script src="index.js"></script>
+  <script src="music.js"></script>
+</body>
+</html>
