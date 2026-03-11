@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Épreuve 3 - Définition Inverse</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/enigme.css">
+  <link rel="icon" type="image/jpeg" href="img/favicon.jpeg">
+  <audio id="bg-music" loop><source src="audio/enigme2_ost.mp3" type="audio/mpeg"></audio>
+</head>
+<body>
+  <div class="page-loader" id="page-loader">
+    <div class="loader-content"><div class="loader-logo"><div class="loader-symbols">
+      <span class="loader-symbol circle"></span><span class="loader-symbol triangle"></span><span class="loader-symbol square"></span>
+    </div></div>
+    <div class="loader-text">ÉPREUVE 3 — DÉFINITION INVERSE</div>
+    <div class="loader-bar"><div class="loader-progress"></div></div>
+    <div class="loader-status">L'artisan rédige les définitions...</div></div>
+  </div>
+  <header class="header">
+    <a href="index.html" class="back-btn">← Retour</a>
+    <div class="header-center"><span class="page-badge">ÉPREUVE 3</span></div>
+    <div class="header-right"></div>
+  </header>
+  <main class="game-page">
+    <div class="game-container game-container-wide">
+      <div class="game-header">
+        <div class="game-icon-large">🔍</div>
+        <h1 class="purple">DÉFINITION INVERSE</h1>
+        <p>On te donne la définition — retrouve le mot ou le métier qui se cache derrière !</p>
+      </div>
+      <div class="game-content">
+        <div class="locked-container hidden" id="locked">
+          <div class="locked-box"><span class="lock-icon">🔒</span><h3>Épreuve verrouillée</h3><p>Termine d'abord l'épreuve 2.</p><a href="quiz.html" class="btn-primary">ALLER À L'ÉPREUVE 2</a></div>
+        </div>
+        <div id="game-area" class="def-game">
+          <div class="def-score-bar">
+            <span class="def-round"   id="def-round">🔍 1 / 5</span>
+            <span class="def-correct" id="def-correct">✅ 0</span>
+            <span class="def-wrong"   id="def-wrong">❌ 0</span>
+          </div>
+          <div class="def-card" id="def-card">
+            <span class="def-label">🔍 Quel est le mot ?</span>
+            <span class="def-icon-big" id="def-icon">⏳</span>
+            <span class="def-definition" id="def-definition">Chargement...</span>
+          </div>
+          <div class="def-feedback" id="def-feedback"></div>
+          <div class="def-choices"  id="def-choices"></div>
+          <p class="def-hint">L'intervenant approfondira chaque terme avec toi ensuite !</p>
+        </div>
+        <div class="result-container-full hidden" id="result">
+          <div class="result-box" id="result-box">
+            <div class="result-icon" id="result-icon"></div>
+            <h3 id="result-title"></h3>
+            <p  id="result-text"></p>
+            <p  class="result-score" id="result-score"></p>
+            <a href="coffre.html" class="btn-primary btn-gold">🏆 VOIR LE COFFRE-FORT</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="js/loader.js"></script>
+  <script src="js/gameState.js"></script>
+  <script src="js/globalTimer.js"></script>
+  <script src="js/enigme.js"></script> 
+  <script src="js/music.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</body>
+</html>

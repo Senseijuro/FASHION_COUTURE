@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Épreuve 2 - Séquence Atelier</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/quiz.css">
+  <link rel="icon" type="image/jpeg" href="img/favicon.jpeg">
+  <audio id="bg-music" loop><source src="audio/quizz_ost.mp3" type="audio/mpeg"></audio>
+</head>
+<body>
+  <div class="page-loader" id="page-loader">
+    <div class="loader-content"><div class="loader-logo"><div class="loader-symbols">
+      <span class="loader-symbol circle"></span><span class="loader-symbol triangle"></span><span class="loader-symbol square"></span>
+    </div></div>
+    <div class="loader-text">ÉPREUVE 2 — SÉQUENCE ATELIER</div>
+    <div class="loader-bar"><div class="loader-progress"></div></div>
+    <div class="loader-status">L'artisan prépare son établi...</div></div>
+  </div>
+  <header class="header">
+    <a href="index.html" class="back-btn">← Retour</a>
+    <div class="header-center"><span class="page-badge">ÉPREUVE 2</span></div>
+    <div class="header-right"></div>
+  </header>
+  <main class="game-page">
+    <div class="game-container game-container-wide">
+      <div class="game-header">
+        <div class="game-icon-large">🔗</div>
+        <h1 class="pink">SÉQUENCE ATELIER</h1>
+        <p>Mémorise les étapes de fabrication, puis remets-les dans le bon ordre !</p>
+      </div>
+      <div class="game-content">
+        <div class="locked-container hidden" id="locked">
+          <div class="locked-box"><span class="lock-icon">🔒</span><h3>Épreuve verrouillée</h3><p>Termine d'abord l'épreuve 1.</p><a href="enigme1.html" class="btn-primary">ALLER À L'ÉPREUVE 1</a></div>
+        </div>
+        <div id="game-area" class="seq-game">
+          <div class="seq-score-bar">
+            <span class="seq-phase" id="seq-phase">👁️ Mémorise les étapes</span>
+            <span class="seq-lives" id="seq-lives">❤️ 2 essais</span>
+          </div>
+
+          <div id="phase-memo">
+            <div class="seq-memo-box">
+              <div class="seq-memo-label">📋 Étapes à mémoriser — retiens l'ordre !</div>
+              <div class="seq-steps-display" id="steps-display"></div>
+              <div class="seq-countdown" id="seq-countdown">8</div>
+            </div>
+            <p class="seq-hint" style="text-align:center;margin-top:0.5rem">Retiens bien l'ordre — tu devras le reproduire ensuite !</p>
+          </div>
+
+          <div id="phase-answer" style="display:none" class="seq-answer-box">
+            <div class="seq-answer-label">🎯 Remets les étapes dans le bon ordre</div>
+            <div class="seq-drop-zone" id="drop-zone">
+              <span class="seq-drop-empty" id="drop-empty">Clique sur les étapes ci-dessous pour les placer ici…</span>
+            </div>
+            <div class="seq-choices-label">🔀 Étapes mélangées — clique pour placer</div>
+            <div class="seq-choices-pool" id="choices-pool"></div>
+            <div class="seq-actions">
+              <button class="seq-btn-undo"     id="btn-undo">↩ Défaire</button>
+              <button class="seq-btn-validate" id="btn-validate">✅ Valider</button>
+              <button class="seq-btn-skip"     id="btn-skip">⏭ Passer (échec)</button>
+            </div>
+            <div class="seq-feedback" id="seq-feedback"></div>
+          </div>
+        </div>
+        <div class="result-container-full hidden" id="result">
+          <div class="result-box" id="result-box">
+            <div class="result-icon" id="result-icon"></div>
+            <h3 id="result-title"></h3>
+            <p  id="result-text"></p>
+            <p  class="result-score" id="result-score"></p>
+            <a href="enigme.html" class="btn-primary">CONTINUER →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="js/loader.js"></script>
+  <script src="js/gameState.js"></script>
+  <script src="js/globalTimer.js"></script>
+  <script src="js/quiz.js"></script> 
+  <script src="js/music.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</body>
+</html>
