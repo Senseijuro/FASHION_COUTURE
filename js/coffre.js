@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var btnCloseFail    = document.getElementById('btn-close-fail');
   var failMessage     = document.getElementById('fail-message');
 
-  if (backBtn) backBtn.addEventListener('click', function(e) { e.preventDefault(); window.location.href = 'index.html'; });
+  // Le lien <a href="index.html"> fonctionne nativement, aucun JS nécessaire.
 
   function updateDisplay() {
     var nextZone      = document.getElementById('next-zone');
