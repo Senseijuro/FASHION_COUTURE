@@ -3,203 +3,91 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Destination Apprentissage - Accueil</title>
+  <title>Coffre-Fort - Maroquinerie</title>
   <link rel="stylesheet" href="css/styles.css">
   <link rel="icon" type="image/jpeg" href="img/favicon.jpeg">
-  <audio id="bg-music" loop><source src="audio/music.mp3" type="audio/mpeg"></audio>
+  <!-- Musique neutre pendant le chargement (avant que l'état soit connu) -->
+  <audio id="bg-music" loop><source src="audio/coffre_win.mp3" type="audio/mpeg"></audio>
+  <!-- Musiques selon le résultat final -->
+  <audio id="music-win"     loop><source src="audio/coffre_win.mp3"     type="audio/mpeg"></audio>
+  <audio id="music-partial" loop><source src="audio/coffre_partial.mp3" type="audio/mpeg"></audio>
+  <audio id="music-fail"    loop><source src="audio/coffre_fail.mp3"    type="audio/mpeg"></audio>
 </head>
 <body>
-
   <div class="page-loader" id="page-loader">
-    <div class="loader-content">
-      <div class="loader-logo">
-        <div class="loader-symbols">
-          <span class="loader-symbol circle"></span>
-          <span class="loader-symbol triangle"></span>
-          <span class="loader-symbol square"></span>
-          <span class="loader-symbol cross"></span>
-        </div>
-      </div>
-      <div class="loader-text">DESTINATION APPRENTISSAGE</div>
-      <div class="loader-bar"><div class="loader-progress"></div></div>
-      <div class="loader-status">Entrée dans l'atelier Haute Couture...</div>
-    </div>
+    <div class="loader-content"><div class="loader-logo"><div class="loader-symbols">
+      <span class="loader-symbol circle"></span>
+      <span class="loader-symbol triangle"></span>
+      <span class="loader-symbol square"></span>
+      <span class="loader-symbol cross"></span>
+    </div></div>
+    <div class="loader-text">COFFRE-FORT DIGITAL</div>
+    <div class="loader-bar"><div class="loader-progress"></div></div>
+    <div class="loader-status">Ouverture de l'atelier du maroquinier...</div></div>
   </div>
-
   <header class="header">
-    <div class="header-left">
-      <div class="squid-symbols">
-        <span class="symbol circle"></span>
-        <span class="symbol triangle"></span>
-        <span class="symbol square"></span>
-        <span class="symbol cross"></span>
-      </div>
-      <span class="logo-text">Destination Apprentissage</span>
-    </div>
-    <div class="header-right">
-      <a href="https://www.onisep.fr/ressources/univers-metier/metiers/maroquinier-maroquiniere" target="_blank" class="btn-formation">
-        <span class="btn-formation-text">Découvrir les formations</span>
-      </a>
-    </div>
+    <a href="index.html" class="back-btn" id="back-btn">← Retour</a>
+    <div class="header-center"><span class="page-badge gold">COFFRE-FORT DIGITAL</span></div>
+    <div class="header-right"></div>
   </header>
-
-  <main class="main-container">
-    <section class="hero">
-      <img src="img/affiche_boost.jpeg" alt="Destination Apprentissage" class="hero-affiche">
-      <p class="hero-subtitle">Mardi 31 Mars 2026 — Lycée Jules Uhry Creil</p>
-    </section>
-
-    <section class="mission-section">
-      <div class="mission-hero">
-        <div class="mission-hero-bg">
-          <img src="img/hautec.jpg" alt="Le film Haute Couture" class="mission-hero-img">
-          <div class="mission-hero-overlay"></div>
-        </div>
-        <div class="mission-hero-content">
-          <span class="mission-tag">SOUS-THÈME OFFICIEL</span>
-          <h2 class="mission-main-title">FASHION<br><span>COUTURE</span></h2>
-          <p class="mission-tagline">"Esther, chef d'atelier, cherche la relève. Prouvez que vous avez de l'or entre les mains pour façonner le cuir."</p>
-          <div class="mission-divider"><span class="divider-line"></span><span class="divider-icon">◆</span><span class="divider-line"></span></div>
-        </div>
+  <main class="game-page">
+    <div class="game-container">
+      <div class="game-header">
+        <div class="game-icon-large">🏆</div>
+        <h1 class="gold">COFFRE-FORT DIGITAL</h1>
+        <p>Récupérez vos accessoires débloqués</p>
       </div>
-    </section>
-
-    <section class="rules-section">
-      <div class="card">
-        <h2>📋 RÈGLES DE L'ATELIER</h2>
-        <ul class="rules-list">
-          <li>Complétez les 3 épreuves de l'établi dans l'ordre</li>
-          <li>Chaque épreuve réussie valide votre expertise dans le coffre</li>
-          <li><strong class="warning">⚠️ Vous avez 2 minutes pour TOUT terminer — l'atelier n'attend pas !</strong></li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="briefing-section-centered">
-      <div class="briefing-card-index">
-        <div class="briefing-header">
-          <div class="briefing-icon"><span class="icon-ring"></span><span class="icon-center">👜</span></div>
-          <div class="briefing-title">
-            <span class="briefing-label" style="color: #ff69b4;">TRANSMISSION & SAVOIR-FAIRE</span>
-            <h3 style="color: #ff007f;">ATELIER D'EXCELLENCE</h3>
+      <div class="game-content">
+        <div class="coffre-progress">
+          <div class="progress-item" id="prog-enigme1"><div class="progress-circle">1</div><span>QCM</span></div>
+          <div class="progress-line"></div>
+          <div class="progress-item" id="prog-quiz"><div class="progress-circle">2</div><span>Séquence</span></div>
+          <div class="progress-line"></div>
+          <div class="progress-item" id="prog-enigma"><div class="progress-circle">3</div><span>Définition</span></div>
+        </div>
+        <div class="rewards-list">
+          <div class="reward-card" id="reward-enigme1" data-game="enigme1">
+            <div class="reward-icon">👜</div>
+            <div class="reward-info"><h3>Accessoire n°1</h3><span class="reward-link">Épreuve 1 - QCM Express</span></div>
+            <div class="reward-status" id="status-enigme1">Verrouillé</div>
           </div>
-          <div class="briefing-stamp" style="color: #ff007f;">MAROQUINERIE</div>
-        </div>
-        <div class="briefing-body">
-          <p class="briefing-intro">
-            <strong>L'artisanat ne s'invente pas, il se transmet.</strong> Esther, première d'atelier dans une grande Maison, vous met à l'épreuve. Démontrez votre précision, votre logique et votre connaissance de la <span class="highlight">Maroquinerie</span> pour mériter votre place à l'établi. À la fin, un <strong>artisan professionnel</strong> vous attend pour débriefer.
-          </p>
-          <div class="briefing-objectives">
-            <h4>🎯 ÉTAPES DE L'ÉVALUATION</h4>
-            <ul>
-              <li><span class="obj-number">01</span> Démontrez vos connaissances théoriques sur le cuir et les outils.</li>
-              <li><span class="obj-number">02</span> Mémorisez parfaitement l'ordre de fabrication d'une pièce.</li>
-              <li><span class="obj-number">03</span> Maîtrisez le vocabulaire technique de l'artisan.</li>
-            </ul>
+          <div class="reward-card" id="reward-quiz" data-game="quiz">
+            <div class="reward-icon">🔗</div>
+            <div class="reward-info"><h3>Accessoire n°2</h3><span class="reward-link">Épreuve 2 - Séquence Atelier</span></div>
+            <div class="reward-status" id="status-quiz">Verrouillé</div>
           </div>
-          <div class="briefing-warning"><span class="warning-icon">⚠️</span><p>Vous avez <strong>2 MINUTES</strong>. Le temps est précieux en atelier. Pas de pause possible !</p></div>
-        </div>
-        <div class="briefing-stats">
-          <div class="stat-card"><span class="stat-icon">🧵</span><span class="stat-number">3</span><span class="stat-text">DÉFIS</span></div>
-          <div class="stat-card"><span class="stat-icon">⏱️</span><span class="stat-number">2</span><span class="stat-text">MINUTES</span></div>
-          <div class="stat-card"><span class="stat-icon">💼</span><span class="stat-number">3</span><span class="stat-text">SACS</span></div>
-        </div>
-        <div class="briefing-footer">
-          <p>Le geste parfait exige du temps. Mais on ne fait rien de beau sans patience et sans rigueur.</p>
-          <span class="footer-signature">— Esther, Première d'Atelier</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="epreuves-section">
-      <h2 class="epreuves-title">PARCOURS D'APPRENTISSAGE</h2>
-      <div class="epreuves-row">
-        
-        <div class="epreuve-card" id="card-enigme1">
-          <div class="epreuve-badge">ÉPREUVE 1</div>
-          <div class="epreuve-icon">👜</div>
-          <h3 class="cyan">QCM EXPRESS</h3>
-          <p>Teste tes connaissances sur le cuir, le métier et les outils</p>
-          <div class="epreuve-status" id="status-enigme1"><span class="status-dot"></span><span>À faire</span></div>
-          <a href="enigme1.html" class="epreuve-btn" id="btn-enigme1">COMMENCER</a>
-        </div>
-        
-        <div class="epreuve-card locked" id="card-quiz">
-          <div class="epreuve-badge">ÉPREUVE 2</div>
-          <div class="epreuve-icon">🔗</div>
-          <h3 class="pink">SÉQUENCE ATELIER</h3>
-          <p>Mémorise et retrouve l'ordre exact de fabrication d'une pièce</p>
-          <div class="epreuve-status" id="status-quiz"><span class="status-dot"></span><span>🔒 Verrouillé</span></div>
-          <a href="quiz.html" class="epreuve-btn disabled" id="btn-quiz">VERROUILLÉ</a>
-        </div>
-        
-        <div class="epreuve-card locked" id="card-enigma">
-          <div class="epreuve-badge">ÉPREUVE 3</div>
-          <div class="epreuve-icon">🔍</div>
-          <h3 class="purple">DÉFINITION INVERSE</h3>
-          <p>Retrouve le mot technique exact caché derrière la définition</p>
-          <div class="epreuve-status" id="status-enigma"><span class="status-dot"></span><span>🔒 Verrouillé</span></div>
-          <a href="enigme.html" class="epreuve-btn disabled" id="btn-enigma">VERROUILLÉ</a>
-        </div>
-
-      </div>
-    </section>
-
-    <section class="coffre-section-index">
-      <div class="coffre-banner">
-        <div class="coffre-banner-glow"></div>
-        <div class="coffre-banner-inner">
-          <div class="coffre-banner-icon">🏆</div>
-          <div class="coffre-banner-info">
-            <span class="coffre-banner-tag">BILAN</span>
-            <h2>COFFRE DE L'ARTISAN</h2>
-            <p>Récupérez votre production puis discutez avec l'intervenant en maroquinerie</p>
-            <div class="epreuve-status" id="status-coffre"><span class="status-dot"></span><span>0/3 débloqué</span></div>
-          </div>
-          <a href="coffre.html" class="coffre-banner-btn">OUVRIR LE COFFRE →</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer-enhanced">
-    <div class="footer-content">
-      <div class="footer-partners">
-        <span class="partners-label">En partenariat avec</span>
-        <div class="partners-logos">
-          <img src="img/logo-creil.png" alt="Ville de Creil" class="partner-logo">
-          <img src="img/logo-e2c.jpg" alt="E2C" class="partner-logo">
-        </div>
-      </div>
-      <div class="footer-main">
-        <div class="footer-info">
-          <div class="footer-logo">
-            <div class="squid-symbols">
-              <span class="symbol circle"></span>
-              <span class="symbol triangle"></span>
-              <span class="symbol square"></span>
-              <span class="symbol cross"></span></div>
-            <span class="footer-title">Destination Apprentissage</span>
-          </div>
-          <p class="footer-date">📅 Mardi 31 Mars 2026</p>
-          <p class="footer-location">📍 Lycée Jules Uhry, Creil</p>
-          <a href="equipe.html" class="btn-equipe">👥 Découvrir l'équipe</a>
-        </div>
-        <div class="footer-qr">
-          <div class="qr-box">
-            <div class="qr-placeholder" id="qr-code"><img src="img/qrcode.png" alt="QR Code" class="qr-img"></div>
-            <p class="qr-label">Scannez pour accéder</p>
+          <div class="reward-card" id="reward-enigma" data-game="enigma">
+            <div class="reward-icon">🔍</div>
+            <div class="reward-info"><h3>Accessoire n°3</h3><span class="reward-link">Épreuve 3 - Définition Inverse</span></div>
+            <div class="reward-status" id="status-enigma">Verrouillé</div>
           </div>
         </div>
+         <div class="next-zone-box hidden" id="next-zone">
+          <div class="next-zone-content">
+            <span class="next-zone-icon" id="next-zone-icon">🎉</span>
+            <h3 id="next-zone-title">ÉPREUVES TERMINÉES</h3>
+            <p id="next-zone-text">Résultat de vos épreuves</p>
+            <div class="next-zone-direction">
+              <span class="direction-icon">➡️</span>
+              <div class="direction-info">
+                <strong>PROCHAINE ÉTAPE</strong>
+                <p>Rendez-vous à la <span class="zone-name">ZONE BTP</span></p>
+              </div>
+            </div>
+            <p class="next-zone-instruction">Présentez-vous au stand pour recevoir vos récompenses et continuer l'aventure !</p>
+          </div>
+        </div>
+        <button class="btn-reset" id="btn-reset">Recommencer le jeu</button>
       </div>
-      <div class="footer-bottom"><p>© 2026 Maître du Jeu Khouyousse — Destination Apprentissage</p></div>
     </div>
-  </footer>
-
-  <script src="js/loader.js"></script>
-  <script src="js/gameState.js"></script>
-  <script src="js/globalTimer.js"></script>
-  <script src="js/index.js"></script>
-  <script src="js/music.js"></script>
+  </main>
+  <div class="modal" id="modal-success">
+    <div class="modal-content success"><div class="modal-icon">OK</div><h3>ACCESSOIRE DÉBLOQUÉ !</h3><p>Signalez au maître du jeu que vous avez réussi.</p><button class="btn-primary" id="btn-close-success">CONTINUER</button></div>
+  </div>
+  <div class="modal" id="modal-fail">
+    <div class="modal-content fail"><div class="modal-icon">X</div><h3>ACCESSOIRE VERROUILLÉ</h3><p id="fail-message">Vous devez réussir l'épreuve pour débloquer cet accessoire.</p><button class="btn-primary" id="btn-close-fail">COMPRIS</button></div>
+  </div>
+  <footer class="footer"><p>© 2026 Maître du Jeu Khouyousse — Destination Apprentissage</p></footer>
+  <script src="js/loader.js"></script><script src="js/gameState.js"></script><script src="js/globalTimer.js"></script><script src="js/coffre.js"></script><script src="js/music.js"></script>
 </body>
 </html>
